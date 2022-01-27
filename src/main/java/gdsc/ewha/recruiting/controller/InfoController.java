@@ -17,7 +17,7 @@ public class InfoController {
     }
 
     @PostMapping("/api/info")
-    public int postNewInfo(@RequestBody InfoRequestDto infoRequestDto) throws Exception {
+    public int postInfo(@RequestBody InfoRequestDto infoRequestDto) throws Exception {
         //InfoRequestDto requestDto = new ObjectMapper().readValue(requestDtoString, InfoRequestDto.class);
         int userId = infoService.createUser(infoRequestDto); //서비스
         return userId;
