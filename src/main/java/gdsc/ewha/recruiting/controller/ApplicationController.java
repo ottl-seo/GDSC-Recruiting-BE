@@ -19,7 +19,7 @@ public class ApplicationController {
     public ApplicationController(ApplicationService applicationService){
         this.applicationService = applicationService;
     }
-    @PostMapping("/api/application")
+    @PostMapping("/api/application/general")
     public int postApplication(@RequestBody ApplicationDto applicationDto) throws Exception {
         int userId = applicationService.createApplication(applicationDto.getInfo().getUserId(), applicationDto.getFirstInput(), applicationDto.getSecondInput(), applicationDto.getThirdInput());
         return userId;
