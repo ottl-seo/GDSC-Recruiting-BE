@@ -23,7 +23,7 @@ public class ApplicationController {
         int userId = applicationService.createApplication(applicationDto.getInfo().getUserId(), applicationDto.getFirstInput(), applicationDto.getSecondInput(), applicationDto.getThirdInput());
         return userId;
     }
-    @GetMapping("/api/getGeneralList")
+    @GetMapping("/api/general/list")
     public List<ApplicationDto> getGeneralList(){
         return applicationService.getAll();
     }

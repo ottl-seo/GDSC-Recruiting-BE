@@ -5,10 +5,9 @@ import gdsc.ewha.recruiting.dto.CoreApplicationDto;
 import gdsc.ewha.recruiting.service.ApplicationService;
 import gdsc.ewha.recruiting.service.CoreApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 public class CoreApplicationController {
     @CrossOrigin("*")
@@ -31,5 +30,10 @@ public class CoreApplicationController {
                     applicationDto.getFifthInput());
             return userId;
         }
+        @GetMapping("/api/core/list")
+        public List<CoreApplicationDto> getCoreList(){
+            return coreApplicationService.getAll();
+        }
+
     }
 }

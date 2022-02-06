@@ -25,7 +25,7 @@ public class InfoController {
         int userId = infoService.createUser(infoRequestDto); //서비스
         return userId;
     }
-    @GetMapping("/api/getInfoList")
+    @GetMapping("/api/info/list")
     public List<InfoDto> getInfoList() {
         return infoService.getAll();
     }
