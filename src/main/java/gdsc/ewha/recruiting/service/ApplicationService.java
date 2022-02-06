@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -25,5 +27,16 @@ public class ApplicationService {
         Application application = new Application(info.get(), firstInput, secondInput, thirdInput);
         applicationRepository.save(application);
         return application.getInfo().getUserId();
+    }
+    @Transactional
+    public List<ApplicationDto> getAll(){
+        List<Application> applicationList;
+        applicationList = applicationRepository.findAll();
+        List<ApplicationDto> applicationDtoList = new ArrayList<>();
+        for(Application application: applicationList){
+            ApplicationDto applicationDto = ApplicationDto.builder().application(application).build();
+            applicationDtoList.add(applicationDto);
+        }
+        return applicationDtoList;
     }
 }
