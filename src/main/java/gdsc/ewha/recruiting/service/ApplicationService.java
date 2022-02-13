@@ -20,9 +20,11 @@ public class ApplicationService {
     private final InfoRepository infoRepository;
 
     @Transactional
-    public int createApplication(int userId, String firstInput, String secondInput, String thirdInput) throws Exception{
+    public int createApplication(int userId, String firstInput, String secondInput,
+                                 String thirdInput, String fourthInput,
+                                 String stacks, String paths, String portfolio) throws Exception{
         Optional<Info> info = infoRepository.findById(userId);
-        Application application = new Application(info.get(), firstInput, secondInput, thirdInput);
+        Application application = new Application(info.get(), firstInput, secondInput, thirdInput, fourthInput, stacks, paths, portfolio);
         applicationRepository.save(application);
         return application.getInfo().getUserId();
     }

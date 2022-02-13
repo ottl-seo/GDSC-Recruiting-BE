@@ -15,12 +15,20 @@ public class ApplicationDto {
     private String firstInput;
     private String secondInput;
     private String thirdInput;
+    private String fourthInput;
+    private String stacks;
+    private String paths;
+    private String portfolio;
 
     @Builder
     public ApplicationDto(Application application){
         this.firstInput = application.getFirstInput();
         this.secondInput = application.getSecondInput();
         this.thirdInput = application.getThirdInput();
+        this.fourthInput = application.getFourthInput();
+        this.stacks = application.getStacks();
+        this.paths = application.getPaths();
+        this.portfolio = application.getPortfolio();
         this.info = InfoDto.builder()
                 .name(application.getInfo().getName())
                 .email(application.getInfo().getEmail())

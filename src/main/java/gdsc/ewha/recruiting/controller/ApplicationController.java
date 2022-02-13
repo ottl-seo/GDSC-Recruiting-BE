@@ -21,7 +21,10 @@ public class ApplicationController {
     }
     @PostMapping("/api/application")
     public int postApplication(@RequestBody ApplicationDto applicationDto) throws Exception {
-        int userId = applicationService.createApplication(applicationDto.getInfo().getUserId(), applicationDto.getFirstInput(), applicationDto.getSecondInput(), applicationDto.getThirdInput());
+        int userId = applicationService.createApplication(applicationDto.getInfo().getUserId(),
+                applicationDto.getFirstInput(), applicationDto.getSecondInput(),
+                applicationDto.getThirdInput(), applicationDto.getFourthInput(),
+                applicationDto.getStacks(), applicationDto.getPaths(), applicationDto.getPortfolio());
         return userId;
     }
 }
