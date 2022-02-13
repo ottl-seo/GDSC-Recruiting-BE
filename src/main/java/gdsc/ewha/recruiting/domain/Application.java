@@ -24,12 +24,25 @@ public class Application { // 외래키 가지는 쪽 (연관관계 주인)
     private String secondInput;
     @Column
     private String thirdInput;
+    @Column
+    private String fourthInput;
+    @Column
+    private String stacks;
+    @Column
+    private String paths;
+    @Column
+    private String portfolio;
 
     @Builder
-    public Application(Info info, String firstInput, String secondInput, String thirdInput){
+    public Application(Info info, String firstInput, String secondInput, String thirdInput, String fourthInput,
+                       String stacks, String paths, String portfolio){
         this.info = info;
         this.firstInput = firstInput;
         this.secondInput = secondInput;
         this.thirdInput = thirdInput;
+        this.fourthInput = fourthInput;
+        this.stacks = stacks;
+        this.paths = paths;
+        this.portfolio = portfolio;
 }
 }
