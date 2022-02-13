@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'gdsc.ewha'
-version = '0.0.1-SNAPSHOT'
+version = 'ottl-api'
 sourceCompatibility = '1.8'
 
 configurations {
